@@ -1,0 +1,46 @@
+name: FocusFlag API
+version: 1.0.0
+slug: focus_flag
+description: Allow to control the Luxafor Flag from Home Assistant
+startup: services
+boot: auto
+init: false
+full_access: true
+#homeassistant_api: true
+#hassio_api: true
+#hassio_role: default
+#image: "local/focus_flag"
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+host_network: true
+ports:
+  5000/tcp: 5000
+devices:
+  - /dev/bus/usb
+#privileged: true
+full_access: true
+privileges:
+  - SYS_RAWIO
+  - DAC_READ_SEARCH
+ingress: false
+panel: false
+options:
+  webex_enabled: true
+  webex_check_interval: 60  # en segundos
+  webex_token: "YOUR_ACCESS_TOKEN"
+  webex_endpoint: "https://webexapis.com/v1/people/me"
+  work_hours:
+    start: "08:00"
+    end: "17:00"
+schema:
+  webex_enabled: bool
+  webex_check_interval: int
+  webex_token: str
+  webex_endpoint: str
+  work_hours:
+    start: str
+    end: str
