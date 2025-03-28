@@ -22,3 +22,4 @@ print('🎉 Luxafor device detected:', dev) if dev else print('❌ pyusb could n
 echo "🚀 Launching FocusFlag API..."
 python3 focusflag_api.py
 
+# Made with ❤️ for focus and flow
